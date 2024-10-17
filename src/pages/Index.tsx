@@ -1,11 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/components/ui/use-toast"
+import { Loader2, Plus, Minus, List, Clipboard, Check, Settings } from 'lucide-react';
+import ListGenerator from '@/components/ListGenerator';
 
 const Index = () => {
+  const { toast } = useToast()
+
+  const handleGenerate = () => {
+    toast({
+      title: "Lists generated!",
+      description: "Your lists have been successfully created.",
+    })
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-100 p-8">
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 className="text-3xl font-bold mb-6 text-center">AI-PGF Auto Lists Generator</h1>
+        <ListGenerator onGenerate={handleGenerate} />
       </div>
     </div>
   );
