@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import Landing from "./pages/Landing"
 import Contact from "./pages/Contact"
 import Dashboard from "./pages/Dashboard"
+import Settings from "./pages/Settings"
 import Auth from "./pages/Auth"
 
 const queryClient = new QueryClient()
@@ -24,6 +25,7 @@ const App = () => (
               <Route path="/auth" element={<Auth />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/settings" element={<Settings />} />
             </Routes>
           </main>
           <Footer />
